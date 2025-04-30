@@ -17,26 +17,44 @@ document.addEventListener("DOMContentLoaded", () => {
             qText.innerHTML = `Pregunta ${index + 1}: ${q.question}`;
             qDiv.appendChild(qText);
 
-            // Aquí empieza la parte nueva: contenedor para las opciones
+            // Contenedor para las opciones
             const optionsContainer = document.createElement("div");
             optionsContainer.classList.add("option-btn");
 
-            q.options.forEach(opt => {
+            q.options.forEach((opt, optIndex) => {
                 const btn = document.createElement("button");
-                btn.textContent = opt;
+                btn.classList.add("option");
+                btn.innerHTML = opt;
+
                 btn.addEventListener("click", () => {
-                    btn.style.backgroundColor = opt === q.answer ? "lightgreen" : "lightcoral";
+                    if (qDiv.classList.contains('respondida')) return;
+                    qDiv.classList.add('respondida');
+
+                    if (optIndex === q.answer) {
+                        btn.classList.add('correcta');
+                    } else {
+                        btn.classList.add('incorrecta');
+                    }
+
+                    const allButtons = qDiv.querySelectorAll('.option');
+                    allButtons.forEach(b => b.disabled = true);
                 });
+
                 optionsContainer.appendChild(btn); // Agregar botón al contenedor
             });
 
             qDiv.appendChild(optionsContainer); // Agregar contenedor al bloque de pregunta
-            container.appendChild(qDiv);
+            container.appendChild(qDiv); // Agregar bloque al contenedor principal
         });
 
-        if (window.MathJax && MathJax.Hub) {
+        // Renderizar MathJax
+        if (window.MathJax && MathJax.typeset) {
+            MathJax.typeset();
+        } else if (window.MathJax && MathJax.Hub) {
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
-        
+
+        // Scroll automático
+        document.getElementById("quiz-container").scrollIntoView({ behavior: "smooth" });
     }
 });

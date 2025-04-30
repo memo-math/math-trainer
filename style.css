@@ -127,17 +127,21 @@ main {
   .option-btn {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
   }
   
   .option-btn button {
     padding: 12px;
     font-size: 16px;
+    width: 60%; /* o prueba con 50%, 70%, según cómo lo veas */
+    max-width: 400px; /* límite para pantallas grandes */
     border: 2px solid #4a90e2;
     border-radius: 8px;
     background-color: #2c2c3e;
     color: #f0f0f0;
     cursor: pointer;
+    text-align: center;
     transition: all 0.3s ease;
   }
   
@@ -145,3 +149,15 @@ main {
     background-color: #0077cc;
     color: #fff;
   }
+
+.option.correcta {
+    background-color: #c8e6c9; /* verde claro */
+    border: 2px solid #2e7d32; /* verde oscuro */
+    color: #2e7d32;
+}
+
+.option.incorrecta {
+    background-color: #ffcdd2; /* rojo claro */
+    border: 2px solid #c62828; /* rojo oscuro */
+    color: #c62828;
+}
