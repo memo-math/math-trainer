@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Trainer</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Aquí va la sección de Mathjax-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Math Trainer</h1>
+        <p>Lleva al límite tus habilidades matemáticas</p>
+    </header>
+    <main>
+        <section class="card-grid">
+            <section class="card">
+                <h2>Álgebra</h2>
+                <ul>
+                    <li><a href="#">Complejos</a></li>
+                    <li><a href="#">División de polinomios</a></li>
+                    <li><a href="#">Factorización</a></li>
+                    <li><a href="#">Productos Notables</a></li>
+                </ul>
+            </section>
+            <section class="card">
+                <h2>Geometría Analítica</h2>
+                <ul>
+                    <li><a href="#">Rectas</a></li>
+                    <li><a href="#">Parábolas</a></li>
+                    <li><a href="#">Elipses</a></li>
+                    <li><a href="#">Hipérbolas</a></li>
+                </ul>
+            </section>
+            <section class="card">
+                <h2>Cálculo</h2>
+                <ul>
+                    <li><a href="#">Derivadas</a></li>
+                    <li><a href="#">Límites</a></li>
+                    <li><a href="#">Integrales</a></li>
+                    <li><a href="#">Optimización</a></li>
+                </ul>
+            </section>
+            
+        </section>
+        <section id="quiz-container"><!--aqui ira el test--></section>
+        <section id="prueba">
+            When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+        </section>
+    </main>
+    
+</body>
+</html>
